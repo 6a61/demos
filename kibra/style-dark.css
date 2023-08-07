@@ -1,0 +1,9 @@
+:root {
+	--primary-color: #0a0a23;
+	--primary-color-dark: #0a1c39;
+	--secondary-color: #f5f5dc;
+}
+
+button.colored {
+	background-color: #705e0a;
+}

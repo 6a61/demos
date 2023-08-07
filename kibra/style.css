@@ -1,0 +1,360 @@
+/*== RESET ===================================================================*/
+
+* { box-sizing: border-box; }
+
+html {
+	margin: 0;
+	min-height: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	margin: 0;
+	font-weight: normal;
+}
+
+p {
+	margin: 0;
+}
+
+/*== STYLE ===================================================================*/
+
+:root {
+	--primary-color: #f5f5dc;
+	--primary-color-dark: #f5e3c6;
+	--secondary-color: #0a0a23;
+	--font-serif: 'Source Serif', serif;
+	--font-sans-serif: 'LatoWeb', sans-serif;
+}
+
+body {
+	max-width: 920px;
+	margin: 0 auto;
+	font-family: 'Source Serif', serif;
+	background-color: var(--primary-color);
+	color: var(--secondary-color);
+	line-height: 1.4;
+	font-size: 16px;
+}
+
+nav {
+	display: flex;
+
+	flex-flow: row nowrap;
+	align-items: center;
+	height: 48px;
+	margin: 16px 12px;
+	font-family: 'LatoWeb', sans-serif;
+}
+
+nav > h1 {
+	font-family: 'Source Serif', serif;
+	flex-grow: 1;
+	font-weight: bold;
+}
+
+nav > * {
+	margin: 0 12px;
+}
+
+nav > a {
+	padding: 4px 0;
+	border-bottom: 2px solid transparent;
+}
+
+nav > a:hover {
+	border-bottom: 2px solid var(--secondary-color);
+}
+
+.dark {
+	background-color: var(--primary-color-dark);
+	border-radius: 4px;
+	margin: 8px;
+	padding: 12px 16px;
+}
+
+aside {
+	font-family: 'LatoWeb', sans-serif;
+	background-color: var(--primary-color-dark);
+	border-radius: 4px;
+	margin: 8px;
+	padding: 12px 16px;
+}
+
+aside > h1 {
+	font-family: 'Source Serif', serif;
+}
+
+article {
+	font-family: 'LatoWeb', sans-serif;
+	padding: 0 12px;
+	margin: 24px 12px;
+}
+
+article > h1 {
+	font-family: 'Source Serif', serif;
+}
+
+p {
+	margin: 8px 0;
+}
+
+button {
+	display: inline-flex;
+	white-space: nowrap;
+	justify-content: center;
+	align-items: center;
+	font-family: 'LatoWeb', sans-serif;
+	background-color: var(--primary-color);
+	border: 1px solid var(--secondary-color);
+	color: var(--secondary-color);
+	border-radius: 24px;
+	padding: 0 24px;
+	min-height: 32px;
+	margin: 4px 0;
+}
+
+button:active {
+	background-color: var(--secondary-color);
+	color: var(--primary-color);
+}
+
+button.colored {
+	background-color: #e8dcf5;
+	border: none;
+}
+
+button.colored:active {
+	background-color: var(--secondary-color);
+}
+
+button.circle {
+	width: 32px;
+	height: 32px;
+	padding: 0;
+	border-radius: 50%;
+	overflow: hidden;
+	border: 1px solid transparent;
+}
+
+button.rounded {
+	border-radius: 4px;
+	padding: 0 8px;
+}
+
+aside a:link,
+article a:link {
+	color: var(--secondary-color);
+	border-radius: 2px;
+}
+
+aside a:visited,
+article a:visited {
+	color: var(--secondary-color);
+}
+
+/*
+aside a:focus,
+article a:focus {
+	background-color: var(--secondary-color);
+	color: var(--primary-color);
+	box-shadow: 0 0 0 1px var(--secondary-color);
+}
+*/
+
+aside a:active,
+article a:active {
+	background-color: var(--secondary-color);
+	color: var(--primary-color);
+	box-shadow: 0 0 0 1px var(--secondary-color);
+}
+
+footer {
+	display: flex;
+	flex-flow: column;
+	align-items: center;
+	justify-content: flex-end;
+	border-top: 2px dotted var(--primary-color-dark);
+	padding: 12px;
+	font-size: 12px;
+}
+
+input {
+	font-family: 'LatoWeb', sans-serif;
+	background-color: var(--primary-color);
+	border: 1px solid var(--secondary-color);
+	height: 32px;
+	outline: none;
+	border-radius: 3px;
+	padding: 4px 8px;
+	color: var(--secondary-color);
+	margin: 4px 0;
+}
+
+input:focus {
+	box-shadow: inset 0 0 0 1px var(--secondary-color);
+}
+
+input[type="checkbox"].toggle {
+	opacity: 0;
+	width: 4px;
+	height: 4px;
+	margin: -4px;
+}
+
+input[type="checkbox"].toggle + label {
+	position: relative;
+	display: inline-flex;
+	align-items: center;
+	height: 32px;
+	padding-left: 48px;
+}
+
+input[type="checkbox"].toggle + label::before {
+	position: absolute;
+	left: 0;
+	display: block;
+	content: "";
+	width: 40px;
+	height: 24px;
+	border: 1px solid var(--secondary-color);
+	border-radius: 12px;
+	background-color: var(--primary-color);
+	transition: background-color 0.2s;
+}
+
+input[type="checkbox"].toggle + label::after {
+	position: absolute;
+	left: 0;
+	display: block;
+	content: "";
+	width: 24px;
+	height: 24px;
+	border: 1px solid var(--secondary-color);
+	border-radius: 12px;
+	background-color: var(--primary-color);
+	transition: left 0.2s;
+}
+
+/*
+input[type="checkbox"]:focus.toggle + label::after {
+	box-shadow: inset 0 0 0 1px var(--secondary-color);
+}
+*/
+
+input[type="checkbox"]:checked.toggle + label::before {
+	background-color: var(--secondary-color);
+}
+
+input[type="checkbox"]:checked.toggle + label::after {
+	left: 16px;
+}
+
+/*
+input[type="color"] {
+	position: relative;
+	top: 5px;
+	border: 1px solid var(--secondary-color);
+	outline: none;
+	padding: 0;
+	background-color: transparent;
+	width: 26px;
+	height: 26px;
+	overflow: hidden;
+	border-radius: 50%;
+
+}
+
+input[type="color"]::-moz-color-swatch,
+input[type="color"]::-webkit-color-swatch {
+	width: calc(100% - 4px);
+	height: calc(100% - 4px);
+	border-radius: 50%;
+	border: none;
+}
+*/
+
+hr {
+	border: none;
+	height: 1px;
+	background-color: var(--primary-color-dark);
+}
+
+span.highlight {
+	background-color: var(--secondary-color);
+	color: var(--primary-color);
+	box-shadow: 0 0 0 1px var(--secondary-color);
+	border-radius: 2px;
+}
+
+details {
+	border-bottom: 1px solid var(--primary-color-dark);
+}
+
+details > summary {
+	display: flex;
+	position: relative;
+	list-style-type: none;
+	cursor: pointer;
+	background-color: var(--primary-color-dark);
+	font-family: var(--font-serif);
+	padding: 4px;
+}
+
+details > p {
+	margin: 4px;
+}
+
+.frame {
+	position: relative;
+	border-radius: 4px;
+	border: 2px solid var(--secondary-color);
+	min-height: 44px;
+	margin: 8px 0;
+}
+
+.frame > button.close-button {
+	position: absolute;
+	top: 0;
+	right: 0;
+	margin: 8px;
+	padding: 0;
+	width: 32px;
+	height: 32px;
+	border: none;
+}
+
+ul.menu {
+	list-style: none;
+	border: 1px solid var(--secondary-color);
+	padding: 0;
+	width: fit-content;
+	margin: 0;
+}
+
+ul.menu > li {
+	font-family: var(--font-serif);
+	padding: 8px;
+	border-bottom: 1px solid var(--secondary-color);
+}
+ul.menu > li:last-child {
+	border-bottom: none;
+}
+
+ul.menu > h1 {
+	padding: 4px 8px;
+	text-transform: uppercase;
+	background-color: var(--primary-color-dark);
+	font-size: 14px;
+}
+
+.form-elements h3 {
+	font-family: var(--font-serif);
+}
+
+.form-elements .other {
+	display: flex;
+	flex-flow: row;
+	align-items: flex-start;
+	gap: 8px;
+}
+
