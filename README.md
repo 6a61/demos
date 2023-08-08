@@ -1,8 +1,11 @@
 # demos
 
-- [gear](https://jacorsca.github.io/demos/gear)
-- [kibra](https://jacorsca.github.io/demos/kibra)
-- [w95](https://jacorsca.github.io/demos/w95)
+A bunch of HTML+CSS+JS demos made in my spare time. Expect messy code and
+disorganization.
+
+- [gear](https://6a61.github.io/demos/gear)
+- [kibra](https://6a61.github.io/demos/kibra)
+- [w95](https://6a61.github.io/demos/w95)
 
 ## License
 
