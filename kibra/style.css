@@ -22,14 +22,14 @@ p {
 	--primary-color: #f5f5dc;
 	--primary-color-dark: #f5e3c6;
 	--secondary-color: #0a0a23;
-	--font-serif: 'Source Serif', serif;
-	--font-sans-serif: 'LatoWeb', sans-serif;
+	--font-serif: 'Source Serif 4', 'Source Serif', serif;
+	--font-sans-serif: 'Lato', sans-serif;
 }
 
 body {
 	max-width: 920px;
 	margin: 0 auto;
-	font-family: 'Source Serif', serif;
+	font-family: var(--font-serif);
 	background-color: var(--primary-color);
 	color: var(--secondary-color);
 	line-height: 1.4;
@@ -43,11 +43,11 @@ nav {
 	align-items: center;
 	height: 48px;
 	margin: 16px 12px;
-	font-family: 'LatoWeb', sans-serif;
+	font-family: var(--font-sans-serif);
 }
 
 nav > h1 {
-	font-family: 'Source Serif', serif;
+	font-family: var(--font-serif);
 	flex-grow: 1;
 	font-weight: bold;
 }
@@ -73,7 +73,7 @@ nav > a:hover {
 }
 
 aside {
-	font-family: 'LatoWeb', sans-serif;
+	font-family: var(--font-sans-serif);
 	background-color: var(--primary-color-dark);
 	border-radius: 4px;
 	margin: 8px;
@@ -81,17 +81,17 @@ aside {
 }
 
 aside > h1 {
-	font-family: 'Source Serif', serif;
+	font-family: var(--font-serif);
 }
 
 article {
-	font-family: 'LatoWeb', sans-serif;
+	font-family: var(--font-sans-serif);
 	padding: 0 12px;
 	margin: 24px 12px;
 }
 
 article > h1 {
-	font-family: 'Source Serif', serif;
+	font-family: var(--font-serif);
 }
 
 p {
@@ -103,7 +103,7 @@ button {
 	white-space: nowrap;
 	justify-content: center;
 	align-items: center;
-	font-family: 'LatoWeb', sans-serif;
+	font-family: var(--font-sans-serif);
 	background-color: var(--primary-color);
 	border: 1px solid var(--secondary-color);
 	color: var(--secondary-color);
@@ -179,7 +179,7 @@ footer {
 }
 
 input {
-	font-family: 'LatoWeb', sans-serif;
+	font-family: var(--font-sans-serif);
 	background-color: var(--primary-color);
 	border: 1px solid var(--secondary-color);
 	height: 32px;
