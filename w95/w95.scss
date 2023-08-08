@@ -1,0 +1,294 @@
+@use "sass:string";
+
+$w95-namespace: ".w95" !default;
+$w95-frame-bg: #c3c3c3 !default;
+$w95-frame-bg-light: #ffffff !default;
+$w95-frame-bg-shadow: #828282 !default;
+$w95-frame-bg-border: #000000 !default;
+$w95-frame-highlight: #000082 !default;
+$w95-frame-text: #000000  !default;
+$w95-frame-text-highlight: #ffffff !default;
+
+#{$w95-namespace} {
+	font-family: MS Sans Serif, Tahoma, sans-serif;
+	font-size: 11px;
+
+	.frame {
+		background-color: $w95-frame-bg;
+		color: $w95-frame-text;
+		box-shadow:
+			inset -1px -1px 0 0 $w95-frame-bg-border,
+			inset  1px  1px 0 0 $w95-frame-bg,
+			inset -2px -2px 0 0 $w95-frame-bg-shadow,
+			inset  2px  2px 0 0 $w95-frame-bg-light;
+		padding: 4px;
+
+		> .title {
+			background-color: $w95-frame-highlight;
+			color: $w95-frame-text-highlight;
+			font-weight: bold;
+			user-select: none;
+
+			display: flex;
+			flex-flow: row nowrap;
+			align-items: center;
+			height: 18px;
+			margin-bottom: 2px;
+
+			> *:first-child {
+				margin-left: 2px;
+			}
+
+			> h1 {
+				font-weight: bold;
+				font-size: inherit;
+				flex-grow: 1;
+			}
+
+			> button, > .button {
+				margin: 2px 0px;
+				min-width: 16px;
+				height: 14px;
+				padding: 0;
+
+				&:last-child {
+					margin: 2px;
+				}
+
+				&:focus {
+					box-shadow:
+						inset -1px -1px 0 0 $w95-frame-bg-border,
+						inset -2px -2px 0 0 $w95-frame-bg-shadow,
+						inset  1px  1px 0 0 $w95-frame-bg-light;
+
+					&::after {
+						border:none;
+					}
+				}
+
+				&:active {
+					box-shadow:
+						inset  1px  1px 0 0 $w95-frame-bg-border,
+						inset -1px -1px 0 0 $w95-frame-bg-light,
+						inset  2px  2px 0 0 $w95-frame-bg-shadow;
+					outline: none;
+					padding: 1px 0 0 1px;
+				}
+			}
+		}
+
+		.inset {
+			box-shadow:
+				inset -1px -1px 0 0 $w95-frame-bg-light,
+				inset  1px  1px 0 0 $w95-frame-bg-shadow,
+				inset -2px -2px 0 0 $w95-frame-bg,
+				inset  2px  2px 0 0 $w95-frame-bg-border;
+			padding: 4px;
+
+			&.light {
+				box-shadow:
+					inset  1px  1px 0 0 $w95-frame-bg-shadow,
+					inset -1px -1px 0 0 $w95-frame-bg-light;
+				padding: 4px;
+			}
+		}
+	}
+
+	button, .button {
+		background-color: $w95-frame-bg;
+		color: $w95-frame-text;
+		border: none;
+		box-shadow:
+			inset -1px -1px 0 0 $w95-frame-bg-border,
+			inset -2px -2px 0 0 $w95-frame-bg-shadow,
+			inset  1px  1px 0 0 $w95-frame-bg-light;
+		padding: 3px 4px 4px 3px;
+		font-family: inherit;
+		font-size: inherit;
+		text-decoration: none;
+
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		position: relative;
+
+		&:focus {
+			box-shadow:
+				inset    0    0 0 1px $w95-frame-bg-border,
+				inset -2px -2px 0   0 $w95-frame-bg-shadow,
+				inset  2px  2px 0   0 $w95-frame-bg-light;
+			outline: none;
+
+			&::after {
+				content: "";
+				position: absolute;
+				top: 3px;
+				left: 3px;
+				right: 3px;
+				bottom: 3px;
+				border: 1px dotted #000000;
+			}
+		}
+
+		&:active {
+			box-shadow:
+				inset    0    0 0 1px $w95-frame-bg-shadow,
+				inset  2px  2px 0   0 $w95-frame-bg-border,
+				inset -2px -2px 0   0 $w95-frame-bg-light;
+			padding: 4px 3px 3px 4px;
+		}
+
+		&:disabled {
+			color: transparent;
+			text-shadow:
+				-1px -1px $w95-frame-bg-shadow,
+				 0px  0px $w95-frame-bg-light;
+
+			&:active {
+				box-shadow:
+					inset -1px -1px 0 0 $w95-frame-bg-border,
+					inset -2px -2px 0 0 $w95-frame-bg-shadow,
+					inset  1px  1px 0 0 $w95-frame-bg-light;
+				padding: 3px 4px 4px 3px;
+			}
+		}
+
+		&.light {
+			box-shadow: none;
+
+			&:hover {
+				box-shadow:
+					inset -1px -1px 0 0 $w95-frame-bg-shadow,
+					inset  1px  1px 0 0 $w95-frame-bg-light;
+			}
+
+			&:active {
+				box-shadow:
+					inset  1px  1px 0 0 $w95-frame-bg-shadow,
+					inset -1px -1px 0 0 $w95-frame-bg-light;
+			}
+
+			&:disabled {
+				&:hover {
+					box-shadow: none;
+				}
+			}
+		}
+	}
+
+	input {
+		box-shadow:
+			inset -1px -1px 0 0 $w95-frame-bg-light,
+			inset  1px  1px 0 0 $w95-frame-bg-shadow,
+			inset -2px -2px 0 0 $w95-frame-bg,
+			inset  2px  2px 0 0 $w95-frame-bg-border;
+		border: none;
+		outline: none;
+		font-family: inherit;
+		font-size: inherit;
+		padding: 4px;
+	}
+
+	input[type="checkbox"] {
+		appearance: none;
+		width: 13px;
+		height: 13px;
+		background-color: #fff;
+		padding: 0;
+		margin-left: 0;
+		margin-bottom: -2px;
+		position: relative;
+
+		&:checked::after {
+			content: "";
+			background-image: url(images/w95/checkbox.png);
+			position: absolute;
+			top: 2px;
+			left: 2px;
+			width: 9px;
+			height: 9px;
+		}
+	}
+
+	input[type="radio"] {
+		appearance: none;
+		width: 12px;
+		height: 12px;
+		margin-bottom: -2px;
+		margin-left: 0;
+		box-shadow: none;
+		background-image: url(images/w95/radio-unchecked.png);
+
+		&:checked {
+			background-image: url(images/w95/radio-checked.png);
+		}
+	}
+
+	hr {
+		border: none;
+		min-height: 2px;
+		box-shadow:
+			inset 0  1px 0 0 $w95-frame-bg-shadow,
+			inset 0 -1px 0 0 $w95-frame-bg-light;
+		width: 100%;
+		padding: 0;
+	}
+
+	// TODO: Rework this, it's a mess.
+
+	ul.menu {
+		list-style: none;
+		margin: 0;
+		padding: 1px 0;
+		position: relative;
+		z-index: 1;
+
+		li {
+			display: flex;
+			align-items: center;
+			padding: 0 4px;
+			position: relative;
+			margin: 2px;
+			user-select: none;
+
+			> ul {
+				display: none;
+			}
+
+			&:hover {
+				background-color: $w95-frame-highlight;
+				color: $w95-frame-text-highlight;
+
+				> ul {
+					display: block;
+					position: absolute;
+					left: 100%;
+					top: -3px;
+					margin-left: -4px;
+					width: max-content;
+					color: $w95-frame-text;
+
+					&.upwards {
+						top: unset;
+						bottom: -3px;
+					}
+				}
+			}
+
+			&.submenu {
+				padding-right: 18px;
+
+				&::before {
+					content: "▸";
+					position: absolute;
+					right: 2px;
+					top: 0;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					height: 100%;
+				}
+			}
+		}
+	}
+}
