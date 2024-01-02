@@ -1,0 +1,114 @@
+/* Reset */
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	min-height: 100vh;
+}
+
+/* Style */
+
+html {
+	display: flex;
+	justify-content: center;
+}
+
+body {
+	width: 720px;
+}
+
+.flex {
+	display: flex;
+}
+
+.preview {
+	border: 1px dotted #000;
+	border-radius: 4px;
+}
+
+/* Style */
+
+.dots {
+	--dot-color: #000;
+	--bg-color: #fff;
+
+	background-image:
+		linear-gradient(90deg, transparent 1px, var(--bg-color) 1px),
+		linear-gradient(0deg, var(--dot-color) 1px, var(--bg-color) 1px);
+	background-size: 16px 16px;
+	background-position: 8px 8px;
+}
+
+.dots.alt::before {
+	display: block;
+	content: "";
+	width: 100%;
+	height: 100%;
+	background-image:
+		linear-gradient(90deg, transparent 1px, var(--bg-color) 1px),
+		linear-gradient(0deg, var(--dot-color) 1px, var(--bg-color) 1px);
+	background-size: 48px 48px;
+	background-position: inherit;
+	filter: opacity(0.7);
+	border-radius: inherit;
+}
+
+.grid {
+	--grid-color: #000;
+
+	background-image:
+		linear-gradient(90deg, var(--grid-color) 1px, transparent 1px),
+		linear-gradient( 0deg, var(--grid-color) 1px, transparent 1px);
+
+	background-size: 16px 16px;
+	background-position: 8px 8px;
+}
+
+.grid.alt {
+	--grid-color: rgba(0,0,0,0.3);
+}
+
+.grid.alt::before {
+	--grid-color: rgba(0,0,0,0.7);
+	display: block;
+	content: "";
+	width: 100%;
+	height: 100%;
+	background-image:
+		linear-gradient(90deg, var(--grid-color) 1px, transparent 1px),
+		linear-gradient( 0deg, var(--grid-color) 1px, transparent 1px);
+	background-size: calc(16px * 4) calc(16px * 4);
+	background-position: inherit;
+	filter: opacity(1.0);
+	border-radius: inherit;
+}
+
+.dot-grid {
+	--grid-color: rgba(0,0,0,1.0);
+	--dot-color: #000;
+	--bg-color: #fff;
+
+	background-image:
+		linear-gradient(90deg, var(--grid-color) 1px, transparent 1px),
+		linear-gradient( 0deg, var(--grid-color) 1px, transparent 1px);
+
+	background-size: 16px 16px;
+	background-position: 8px 8px;
+}
+
+.dot-grid::before {
+	display: block;
+	content: "";
+	width: 100%;
+	height: 100%;
+	background-image:
+		linear-gradient(90deg, transparent 1px, var(--bg-color) 1px),
+		linear-gradient(0deg, var(--dot-color) 1px, var(--bg-color) 1px);
+	background-size: 32px 32px;
+	background-position: inherit;
+	filter: opacity(0.9);
+	border-radius: inherit;
+}
